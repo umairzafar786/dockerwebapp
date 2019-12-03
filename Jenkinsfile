@@ -2,7 +2,7 @@ node {
 
     checkout scm
 
-    docker.withRegistry('localhost:443', 'docker-hub') {
+    docker.withRegistry('http://localhost:443', 'docker-hub') {
 
         def customImage = docker.build("umairzafar786:443:/dockerwebapp")
 
