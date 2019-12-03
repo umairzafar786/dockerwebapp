@@ -2,9 +2,9 @@ node {
 
     checkout scm
 
-    docker.withRegistry('http://localhost:8091/testreg', 'portainer') {
+    docker.withRegistry('localhost:443', 'docker-hub') {
 
-        def customImage = docker.build("umairzafar786/dockerwebapp")
+        def customImage = docker.build("umairzafar786:443:/dockerwebapp")
 
         /* Push the container to the custom Registry */
         customImage.push()
